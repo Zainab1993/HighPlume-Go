@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Register = require("../models/customerRegisterModel");
-const User = require("../models/user");
 
 router.post("/getCustomer", (req, res, next) => {
   Register.find()
@@ -45,30 +44,14 @@ router.post("/register", (req, res, next) => {
             email: req.body.email,
             password: req.body.password
           });
-          const usr = new user({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            type: req.body.type,
-            email: req.body.email,
-            password: req.body.password
-          });
+
           register
             .save()
             .then(result => {
-              loginUser
-                .save()
-                .then(result => {
-                  console.log(result);
-                  res.status(201).json({
-                    message: "User created"
-                  });
-                })
-                .catch(err => {
-                  console.log(err);
-                  res.status(500).json({
-                    error: err
-                  });
-                });
+              console.log(result);
+              res.status(201).json({
+                message: "User created"
+              });
             })
             .catch(err => {
               console.log(err);
