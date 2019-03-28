@@ -32,7 +32,7 @@ class sectionEdit extends Component {
 
     //Getting general questions From DB  and show into the lefside options
     axios
-      .post("http://localhost:6005/generalQuestions/getGeneralQuestions")
+      .post("http://18.222.16.46/generalQuestions/getGeneralQuestions")
       .then(response => {
         questions_from_db = response.data.generalQuestionsInfo;
         console.log(questions_from_db);
@@ -58,10 +58,7 @@ class sectionEdit extends Component {
       section_name: sectionName
     };
     axios
-      .post(
-        "http://localhost:6005/createSection/getSectionInformation",
-        secData
-      )
+      .post("http://18.222.16.46/createSection/getSectionInformation", secData)
       .then(response => {
         console.log(response);
         debugger;
@@ -76,7 +73,7 @@ class sectionEdit extends Component {
         };
         axios
           .post(
-            "http://localhost:6005/savedSectionQuestion/getSelectedQuestions",
+            "http://18.222.16.46/savedSectionQuestion/getSelectedQuestions",
             secData1
           )
           .then(response => {
@@ -128,7 +125,7 @@ class sectionEdit extends Component {
     };
 
     axios
-      .post("http://localhost:6005/createSection/updateSectionData", secData2)
+      .post("http://18.222.16.46/createSection/updateSectionData", secData2)
       .then(response => {
         console.log(response);
         this.props.history.push(`/section`);

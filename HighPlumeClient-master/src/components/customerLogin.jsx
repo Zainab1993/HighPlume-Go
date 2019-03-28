@@ -44,7 +44,7 @@ class Login extends Component {
     };
     // console.log(userData);
     axios
-      .post("http://localhost:6007/user/customerlogin", userData)
+      .post("http://18.222.16.46/user/customerlogin", userData)
       .then(response => {
         debugger;
         console.log(response);

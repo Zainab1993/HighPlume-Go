@@ -25,7 +25,7 @@ class categoryInfo extends Component {
     var divHtml = "";
     //Getting All Sections From Sections Collections and show them into table
     axios
-      .post("http://localhost:6005/createSection/getSectionInfo")
+      .post("http://18.222.16.46/createSection/getSectionInfo")
       .then(response => {
         sectionData = response.data.sectionLocalData;
         divHtml += "<thead  id='thead'>";
@@ -70,7 +70,7 @@ class categoryInfo extends Component {
 
     axios
       .post(
-        "http://localhost:6005/category/addCategoryInformation",
+        "http://18.222.16.46/category/addCategoryInformation",
         categoryData1
       )
       .then(response => {
@@ -108,7 +108,7 @@ class categoryInfo extends Component {
 
           axios
             .post(
-              "http://localhost:6005/categoryInfo/AddCategoryInfo",
+              "http://18.222.16.46/categoryInfo/AddCategoryInfo",
               categoryInfoData
             )
             .then(response => {

@@ -35,7 +35,7 @@ class editQuestion extends Component {
     //get question by ID from generalQuestions Collection for editing the Question
     axios
       .post(
-        "http://localhost:6005/generalQuestions/getQuestionByQDesc",
+        "http://18.222.16.46/generalQuestions/getQuestionByQDesc",
         questionData
       )
 
@@ -56,7 +56,7 @@ class editQuestion extends Component {
     // });
     var divHtml = "";
     axios
-      .post("http://localhost:6005/generalQuestions/getGeneralQuestions")
+      .post("http://18.222.16.46/generalQuestions/getGeneralQuestions")
       .then(response => {
         console.log(response);
         questions_from_db = response.data.generalQuestionsInfo;
@@ -102,7 +102,7 @@ class editQuestion extends Component {
       Tooltip: this.state.tooltip
     };
     axios
-      .post("http://localhost:6005/generalQuestions/updateQuestion", userData)
+      .post("http://18.222.16.46/generalQuestions/updateQuestion", userData)
       .then(response => {
         console.log(response);
       })

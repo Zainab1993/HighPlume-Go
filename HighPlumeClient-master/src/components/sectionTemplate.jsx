@@ -43,7 +43,7 @@ class sectionTemplate extends Component {
       section_name: section_name
     };
     axios
-      .post("http://localhost:6005/createSection/getSectionInfo")
+      .post("http://18.222.16.46/createSection/getSectionInfo")
       .then(response => {
         console.log(response);
         //section_id = response.data.sectionLocalData.section_id;
@@ -61,7 +61,7 @@ class sectionTemplate extends Component {
         console.log(error.response);
       });
     axios
-      .post("http://localhost:6005/generalQuestions/getGeneralQuestions")
+      .post("http://18.222.16.46/generalQuestions/getGeneralQuestions")
       .then(response => {
         questions_from_db = response.data.generalQuestionsInfo;
         console.log(questions_from_db);
@@ -105,7 +105,7 @@ class sectionTemplate extends Component {
     const test = { testUserData: userDataArr };
     axios
       .post(
-        "http://localhost:6005/savedSectionQuestion/savedTemplateQuestions",
+        "http://18.222.16.46/savedSectionQuestion/savedTemplateQuestions",
         test
       )
       .then(response => {
@@ -129,7 +129,7 @@ class sectionTemplate extends Component {
 
     showLoader();
     axios
-      .post("http://localhost:6005/addQuestion/addGeneralQuestion", userData)
+      .post("http://18.222.16.46/addQuestion/addGeneralQuestion", userData)
       .then(response => {
         debugger;
         console.log(response);

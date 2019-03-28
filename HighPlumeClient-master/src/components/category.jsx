@@ -22,7 +22,7 @@ class category extends Component {
     var divHtml = "";
 
     axios
-      .post("http://localhost:6005/category/getCategoryInformationWithoutPara")
+      .post("http://18.222.16.46/category/getCategoryInformationWithoutPara")
       .then(response => {
         console.log(response);
         categoryData = response.data.categoryLocalData;
@@ -79,7 +79,7 @@ class category extends Component {
           };
           axios
             .post(
-              "http://localhost:6005/category/deleteCategoryData",
+              "http://18.222.16.46/category/deleteCategoryData",
               deleteCategoryData
             )
             .then(response => {

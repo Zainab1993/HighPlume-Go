@@ -36,7 +36,7 @@ class registerCustomer extends Component {
     });
     debugger;
     axios
-      .post("http://localhost:6005/category/getCategoryInformation")
+      .post("http://18.222.16.46/category/getCategoryInformation")
       .then(response => {
         catType_from_db = response.data.categoryLocalData;
         console.log(catType_from_db);
@@ -82,7 +82,7 @@ class registerCustomer extends Component {
     };
 
     axios
-      .post("http://localhost:6005/customerRegister/register", userData)
+      .post("http://18.222.16.46/customerRegister/register", userData)
       .then(response => {
         console.log(response);
         this.props.history.push(`/login`);

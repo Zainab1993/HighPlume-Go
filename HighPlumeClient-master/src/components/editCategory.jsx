@@ -38,7 +38,7 @@ class editCategory extends Component {
     };
     axios
       .post(
-        "http://localhost:6005/category/getCategoryInformationWithPara",
+        "http://18.222.16.46/category/getCategoryInformationWithPara",
         categortyData
       )
       .then(response => {
@@ -55,7 +55,7 @@ class editCategory extends Component {
     var divHtml = "";
 
     axios
-      .post("http://localhost:6005/createSection/getSectionInfo")
+      .post("http://18.222.16.46/createSection/getSectionInfo")
       .then(response => {
         console.log(response);
         sectionData = response.data.sectionLocalData;
@@ -100,10 +100,7 @@ class editCategory extends Component {
     };
 
     axios
-      .post(
-        "http://localhost:6005/category/updateCategory",
-        updatedCategoryData
-      )
+      .post("http://18.222.16.46/category/updateCategory", updatedCategoryData)
       .then(response => {
         console.log(response);
 
@@ -137,7 +134,7 @@ class editCategory extends Component {
 
           axios
             .post(
-              "http://localhost:6005/categoryInfo/updateCategoryInfo",
+              "http://18.222.16.46/categoryInfo/updateCategoryInfo",
               categoryInfoData
             )
             .then(response => {

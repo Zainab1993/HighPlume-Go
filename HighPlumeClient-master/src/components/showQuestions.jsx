@@ -19,7 +19,7 @@ class showQuestions extends Component {
   componentDidMount() {
     var divHtml = "";
     axios
-      .post("http://localhost:6005/generalQuestions/getGeneralQuestions")
+      .post("http://18.222.16.46/generalQuestions/getGeneralQuestions")
       .then(response => {
         console.log(response);
         questions_from_db = response.data.generalQuestionsInfo;
@@ -77,7 +77,7 @@ class showQuestions extends Component {
           };
           axios
             .post(
-              "http://localhost:6005/generalQuestions/deleteQuestion",
+              "http://18.222.16.46/generalQuestions/deleteQuestion",
               questionData
             )
             .then(response => {

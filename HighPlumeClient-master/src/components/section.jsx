@@ -24,7 +24,7 @@ class section extends Component {
     var divHtml = "";
 
     axios
-      .post("http://localhost:6005/createSection/getSectionInfo")
+      .post("http://18.222.16.46/createSection/getSectionInfo")
       .then(response => {
         console.log(response);
         sectionData = response.data.sectionLocalData;
@@ -80,7 +80,7 @@ class section extends Component {
           };
           axios
             .post(
-              "http://localhost:6005/createSection/deleteSection",
+              "http://18.222.16.46/createSection/deleteSection",
               deleteSectionData
             )
             .then(response => {

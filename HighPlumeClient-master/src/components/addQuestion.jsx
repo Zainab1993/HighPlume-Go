@@ -22,10 +22,7 @@ class addQuestion extends Component {
       tooltip: this.state.tooltip
     };
     axios
-      .post(
-        "http://localhost:6005/generalQuestions/addGeneralQuestion",
-        userData
-      )
+      .post("http://18.222.16.46/generalQuestions/addGeneralQuestion", userData)
       .then(response => {
         console.log(response);
       })

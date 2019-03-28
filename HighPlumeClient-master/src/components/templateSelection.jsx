@@ -32,40 +32,40 @@ class templateSelection extends Component {
   }
   openModal() {
     debugger;
-    //<!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        {/* <!-- Modal content--> */}
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-            <h4 class="modal-title">Modal Header</h4>
-          </div>
-          <div class="modal-body">
-            <p>Some text in the modal.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>;
-    $("#table tbody").on("click", "#btnModal", function() {
-      $("#myModal").modal("show");
-      // var rowIndex = $(this).closest("tr");
-      // var uid = $.trim(
-      //   $(rowIndex)
-      //     .find("td:eq(0)")
-      //     .text()
-      // );
-      // console.log(uid);
-      // sessionStorage.setItem("ModalData", uid);
-      // window.location.replace("/sectionEdit");
-    });
+    // <!-- Modal -->
+    // <div class="modal fade" id="myModal" role="dialog">
+    //   <div class="modal-dialog">
+    //     {/* <!-- Modal content--> */}
+    //     <div class="modal-content">
+    //       <div class="modal-header">
+    //         <button type="button" class="close" data-dismiss="modal">
+    //           &times;
+    //         </button>
+    //         <h4 class="modal-title">Modal Header</h4>
+    //       </div>
+    //       <div class="modal-body">
+    //         <p>Some text in the modal.</p>
+    //       </div>
+    //       <div class="modal-footer">
+    //         <button type="button" class="btn btn-default" data-dismiss="modal">
+    //           Close
+    //         </button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>;
+    // $("#table tbody").on("click", "#btnModal", function() {
+    //   $("#myModal").modal("show");
+    // var rowIndex = $(this).closest("tr");
+    // var uid = $.trim(
+    //   $(rowIndex)
+    //     .find("td:eq(0)")
+    //     .text()
+    // );
+    // console.log(uid);
+    // sessionStorage.setItem("ModalData", uid);
+    // window.location.replace("/sectionEdit");
+    //});
     // var secdivHtml = "";
     // var checkedRows = [];
     // var checkedRowId = [];
@@ -99,7 +99,7 @@ class templateSelection extends Component {
     // const Template_id = checkedRowId.toString();
     // parseInt(Template_id, 10);
     // axios
-    //   .post("http://localhost:6005/createCategory/getcategoryInfoTemplate", {
+    //   .post("http://18.222.16.46/createCategory/getcategoryInfoTemplate", {
     //     params: {
     //       Template_id: Template_id
     //     }
@@ -123,9 +123,9 @@ class templateSelection extends Component {
     //   .catch(error => {
     //     console.log(error.response);
     //   });
-    // this.setState({
-    //   visible: true
-    // });
+    this.setState({
+      visible: true
+    });
   }
 
   closeModal() {
@@ -145,7 +145,7 @@ class templateSelection extends Component {
     debugger;
     // var categoryInfo = [];
     // axios
-    //   .post("http://localhost:6005/createcategory/getcategoryInfoWithoutPara")
+    //   .post("http://18.222.16.46/createcategory/getcategoryInfoWithoutPara")
     //   .then(response => {
     //     console.log(response);
     //     categoryInfo = response.data.categoryLocalData;
@@ -155,7 +155,7 @@ class templateSelection extends Component {
     //   });
 
     axios
-      .post("http://localhost:6005/category/getCategoryInformationWithoutPara")
+      .post("http://18.222.16.46/category/getCategoryInformationWithoutPara")
       .then(response => {
         console.log(response);
         var divHtml = "";
@@ -194,33 +194,33 @@ class templateSelection extends Component {
         document.getElementById("tableSection").innerHTML = divHtml;
         // document.getElementById("reg1").innerHTML = divHtml;
 
-        // <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-            {/* <!-- Modal content--> */}
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                  &times;
-                </button>
-                <h4 class="modal-title">Modal Header</h4>
-              </div>
-              <div class="modal-body">
-                <p>Some text in the modal.</p>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-default"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
+        $("#tableSection tbody").on("click", "#btnModal", function() {
+          // <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              {/* <!-- Modal content--> */}
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                  </button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-default"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>;
-        $("#tableSection tbody").on("click", "#btnModal", function() {
+          </div>;
           $("#myModal").modal();
         });
         // $("#table tbody").on("click", "#btnModal", function() {
@@ -285,7 +285,7 @@ class templateSelection extends Component {
     // const Template_id = checkedRowId.toString();
     // // parseInt(Template_id, 10);
     // axios
-    //   .post("http://localhost:6005/createCategory/getcategoryInfoTemplate", {
+    //   .post("http://18.222.16.46/createCategory/getcategoryInfoTemplate", {
     //     params: {
     //       Template_id: Template_id
     //     }
@@ -377,14 +377,14 @@ class templateSelection extends Component {
           style={{ marginTop: "5%" }}
         />
 
-        {/* <button
+        <button
           type="button"
           name="savebtn"
           className="btn btn-primary"
           onClick={() => this.openModal()}
         >
           Show
-        </button> */}
+        </button>
 
         <Modal
           visible={this.state.visible}
