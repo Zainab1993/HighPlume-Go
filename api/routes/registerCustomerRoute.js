@@ -55,33 +55,51 @@ router.post("/register", (req, res, next) => {
         });
       } else {
         const register = new Register({
-          first_name: req.body.first_name,
-          last_name: req.body.last_name,
-          type: req.body.type,
-          templateType: req.body.templateType,
-          companyName: req.body.companyName,
-          address: req.body.address,
-          phoneNo: req.body.phoneNo,
-          businessPhoneNo: req.body.businessPhsoneNo,
-          businessAddress: req.body.businessAddress,
-          email: req.body.email,
-          password: req.body.password
-        });
-
-        register
-          .save()
-          .then(result => {
-            console.log(result);
-            res.status(201).json({
-              message: "User created"
-            });
-          })
-          .catch(err => {
-            console.log(err);
-            res.status(500).json({
-              error: err
-            });
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            type: req.body.type,
+            templatetype: req.body.templateType,
+            companyName: req.body.companyName,
+            address: req.body.address,
+            phoneNo: req.body.phoneNo,
+            businessPhoneNo: req.body.businessPhsoneNo,
+            businessAddress: req.body.businessAddress,
+            email: req.body.email,
+            password: req.body.password
           });
+          const loginUser = new User({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            type: req.body.type,
+            email: req.body.email,
+            password: req.body.password
+          });
+
+          register
+            .save()
+            .then(result => {
+              console.log(result);
+              loginUser
+                .save()
+                .then(result => {
+                  console.log(result);
+                  res.status(201).json({
+                    message: "User created"
+                  });
+                })
+                .catch(err => {
+                  console.log(err);
+                  res.status(500).json({
+                    error: err
+                  });
+                });
+            })
+            .catch(err => {
+              console.log(err);
+              res.status(500).json({
+                error: err
+              });
+            });
       }
     });
 });
