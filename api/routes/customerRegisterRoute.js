@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Register = require("../models/customerRegisterModel");
+const User = require("../models/user");
 
 router.post("/getCustomer", (req, res, next) => {
   Register.find()
@@ -27,7 +28,7 @@ router.post("/register", (req, res, next) => {
     .then(user => {
       if (user.length >= 1) {
         return res.status(409).json({
-          message: "Mail exists"
+          message: "This email address already exists"
         });
       } else {
         {
@@ -44,18 +45,16 @@ router.post("/register", (req, res, next) => {
             email: req.body.email,
             password: req.body.password
           });
-          const loginUser = new User({
+          const usr = new user({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             type: req.body.type,
             email: req.body.email,
             password: req.body.password
           });
-
           register
             .save()
             .then(result => {
-              console.log(result);
               loginUser
                 .save()
                 .then(result => {
