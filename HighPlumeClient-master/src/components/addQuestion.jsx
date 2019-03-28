@@ -25,11 +25,12 @@ class addQuestion extends Component {
       .post("http://18.222.16.46/generalQuestions/addGeneralQuestion", userData)
       .then(response => {
         console.log(response);
+        window.location.href = "http://18.222.16.46/showQuestions";
       })
       .catch(error => {
         console.log(error.response);
       });
-    this.props.history.push(`/showQuestions`);
+    // this.props.history.push(`/showQuestions`);
   }
 
   render() {
